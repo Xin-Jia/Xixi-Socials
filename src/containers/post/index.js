@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Comment } from '../../components';
 import CommentInput from '../../components/comment-input';
-import { UserContext } from '../../contexts/user';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { db, storage } from '../../firebase';
 import './style.css';
 
@@ -45,11 +45,10 @@ export default function Post({ profileUrl, username,
                 <div className="post_headerLeft">
                     <img className="post_profilePic" src={profileUrl} alt="" />
                     <p style={{ marginLeft: "8px" }}>{username}</p>
-                    <p className="post_date">{timestamp.toDate().toDateString()}</p>
+                    <p className="post_date">{timestamp ? timestamp.toDate().toDateString() : <></>}</p>
                 </div>
 
-                {user && user.displayName === username ? <button onClick={deletePost} className="post_delete">Delete</button> : <></>}
-
+                {user && user.displayName === username ? <DeleteIcon onClick={deletePost} className="post_delete" /> : <></>}
 
             </div>
 
@@ -60,7 +59,7 @@ export default function Post({ profileUrl, username,
 
             <div>
                 <p>
-                    <div style={{ marginTop: "0.5em", marginBottom: "1em" }}>
+                    <div style={{ marginTop: "0.5em", marginBottom: "1em", fontSize: "18px" }}>
                         {caption}
                     </div>
                 </p>

@@ -22,21 +22,9 @@
     border-radius: 20px;
 }
 .post_delete{
-    border:none;
-    background-color:#ACA9A9;
     cursor:pointer;
-    padding:5px 10px;
-    border-radius:15px;
-    color:white;
-}
-.post_delete:hover{
-    color:white;
-    background-color: black;
 }
 
-.post_delete :focus{
-    outline:none;
-}
 
 .post_photoUrl{
     width:100%;
