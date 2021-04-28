@@ -1,0 +1,39 @@
+.commentInput{
+    display:flex;
+    justify-content:space-between;
+}
+.commentInput_textarea{
+    border: none;
+    width: 100%;
+    resize:none;
+    margin-top:15px;
+    margin-left:7px;
+    font-size:14px;
+      font-family: 'Dosis',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.commentInput_textarea:focus{
+    outline: none;
+    border-bottom:0.5px solid #B9B6B6;
+    width:90%;
+}
+.commentInput_button{
+    border:none;
+    background-color:#989898;
+    cursor:pointer;
+    padding:8px;
+    border-radius:15px;
+    color:white;
+}
+
+.commentInput_button:hover{
+    background-color:#de5246;
+}
+
+.commentInput_button:focus{
+    outline: none;
+}

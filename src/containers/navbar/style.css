@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding:12px 24px;
+    background-color:white;
+}
+.navbar_img{
+    height:35px;
+    border-radius:20px;
+}
+.navbar_profile{
+    display: flex;
+    align-items:center;
+}
+.navbar_logout{
+    margin-left:10px;
+    margin-top:5px;
+    cursor:pointer;
+}
