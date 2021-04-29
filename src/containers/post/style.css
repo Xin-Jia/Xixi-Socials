@@ -36,3 +36,33 @@
     opacity: 0.7;
     margin-left:10px;
 }
+.post_likes{
+    display: flex;
+    align-items:center;
+    margin-bottom:1em;
+    font-size:14px;
+    color:#807F7F;
+    cursor:pointer;
+}
+.post_likeIcon{
+    margin-right:6px;
+    width:20px !important;
+    height:20px !important;
+    color: #F3CCBE;
+}
+.post_likesNum:hover{
+    text-decoration: underline;
+}
+.post_likesUsers{
+    margin-left:1em;
+    margin-top:-2em;
+    background-color:#888685;
+    padding:5px;
+    align-items:center;
+    position:absolute;
+    color:white;
+    border-radius:5px;
+    font-size:13px;
+    text-align: center;
+    width:70px;
+}

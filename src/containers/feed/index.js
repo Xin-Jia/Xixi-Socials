@@ -26,6 +26,7 @@ export default function Feed({ user }) {
                     caption={post.caption}
                     comments={post.comments}
                     timestamp={post.timestamp}
+                    likes={post.likes}
                     user={user} />
             })}
         </div>

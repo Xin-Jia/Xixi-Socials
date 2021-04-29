@@ -48,6 +48,7 @@ export default function CreatePost({ user }) {
                             username: user.displayName,
                             profileUrl: user.photoURL,
                             comments: [],
+                            likes: [],
                         })
                     });
 
@@ -62,6 +63,7 @@ export default function CreatePost({ user }) {
                     username: user.displayName,
                     profileUrl: user.photoURL,
                     comments: [],
+                    likes: [],
                 })
             }
         }
@@ -112,7 +114,7 @@ export default function CreatePost({ user }) {
             ) :
                 (<div className="heading">
                     <h2>Welcome to Xixi Socials !</h2>
-                    <h3> Sign In to Post & Comment ! 🔥 </h3></div>)}
+                    <h3> Sign In to Post & Comment !</h3></div>)}
 
         </div>
     );
