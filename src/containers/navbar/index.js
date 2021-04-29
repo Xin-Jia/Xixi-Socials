@@ -23,7 +23,7 @@ export default function Navbar({ user }) {
 
     return (
         <div className="navbar">
-            <p>Xixi Socials</p>
+            <p>Xixi Socials  🌸 </p>
             {user ?
                 <div className="navbar_profile">
                     <img className="navbar_img" src={user.photoURL} />

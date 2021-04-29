@@ -23,7 +23,7 @@ export default function CreatePost({ user }) {
     };
 
     const handleUpload = () => {
-        if (image) {
+        if (image && caption !== "") {
             var imageName = makeid(10);
             const uploadTask = storage.ref(`images/${imageName}.jpg`)
                 .put(image);
@@ -54,14 +54,16 @@ export default function CreatePost({ user }) {
             });
         }
         else {
-            db.collection("posts").add({
-                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                caption: caption,
-                photoUrl: null,
-                username: user.displayName,
-                profileUrl: user.photoURL,
-                comments: [],
-            })
+            if (caption !== "") {
+                db.collection("posts").add({
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    caption: caption,
+                    photoUrl: null,
+                    username: user.displayName,
+                    profileUrl: user.photoURL,
+                    comments: [],
+                })
+            }
         }
 
         setCaption("");
@@ -109,8 +111,8 @@ export default function CreatePost({ user }) {
                 </div>
             ) :
                 (<div className="heading">
-                    <h2>Welcome to Xixi Socials!</h2>
-                    <h3> Sign In to Post & Comment!</h3></div>)}
+                    <h2>Welcome to Xixi Socials !</h2>
+                    <h3> Sign In to Post & Comment ! 🔥 </h3></div>)}
 
         </div>
     );

@@ -3,6 +3,7 @@
     justify-content: space-between;
     padding:12px 24px;
     background-color:white;
+    align-items:center;
 }
 .navbar_img{
     height:35px;
