@@ -6,6 +6,7 @@
 }
 .heading{
     text-align:center;
+    cursor:default;
 }
 .subheading{
     margin-left:13px;

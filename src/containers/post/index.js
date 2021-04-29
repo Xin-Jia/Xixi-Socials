@@ -131,7 +131,7 @@ export default function Post({ profileUrl, username,
             </div>
 
             <div className="post_likes">
-                {alreadyLiked ? <FavoriteIcon className="post_likeIcon" style={user ? { color: "#E76464" } : { color: "#E76464", cursor: "default" }} onClick={removeLike} /> : <FavoriteIcon style={user ? {} : { cursor: "default" }} className="post_likeIcon" onClick={addLike} />}
+                {alreadyLiked ? <FavoriteIcon className="post_likeIcon" style={user ? { color: "#E76464" } : { color: "#F3CCBE", cursor: "default" }} onClick={removeLike} /> : <FavoriteIcon style={user ? {} : { cursor: "default", color: "#F3CCBE" }} className="post_likeIcon" onClick={addLike} />}
 
                 {likes && likes.length !== 0 ?
                     <Popper id={id2} open={open} anchorEl={anchorEl}>

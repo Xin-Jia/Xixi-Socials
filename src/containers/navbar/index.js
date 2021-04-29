@@ -8,7 +8,6 @@ import { auth } from "../../firebase";
 
 export default function Navbar({ user }) {
 
-    //const [user, setUser] = useContext(UserContext).user;
     const signOut = async (e) => {
         e.preventDefault();
 
