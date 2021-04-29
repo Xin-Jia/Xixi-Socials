@@ -54,3 +54,6 @@
     margin: 12px 0px;
     border-radius: 5px;
 }
+p{
+    cursor:default;
+}

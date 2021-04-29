@@ -15,7 +15,7 @@ export default function Post({ profileUrl, username,
     const [alreadyLiked, setAlreadyLiked] = useState(false);
 
     useEffect(() => {
-        if (likesArray) {
+        if (likesArray && user) {
             likesArray.map((like) => {
                 if (like.user === user.displayName) {
                     setAlreadyLiked(true);
@@ -26,35 +26,39 @@ export default function Post({ profileUrl, username,
 
     const addLike = () => {
 
-        console.log("not already liked, add");
-        likesArray.push({
-            user: user.displayName,
-        });
-
-        db.collection('posts')
-            .doc(id)
-            .update({
-                likes: likesArray,
+        if (user) {
+            console.log("not already liked, add");
+            likesArray.push({
+                user: user.displayName,
             });
-        setAlreadyLiked(true);
 
+            db.collection('posts')
+                .doc(id)
+                .update({
+                    likes: likesArray,
+                });
+            setAlreadyLiked(true);
+
+        }
     };
 
     const removeLike = () => {
+        if (user) {
 
-        const newLikesArray = likesArray.filter((like) => like.user !== user.displayName);
+            const newLikesArray = likesArray.filter((like) => like.user !== user.displayName);
 
-        console.log(likesArray)
-        console.log("already liked, removing");
-        console.log(newLikesArray)
-        db.collection('posts')
-            .doc(id)
-            .update({
-                likes: newLikesArray
-            });
-        setLikesArray(newLikesArray);
-        setAlreadyLiked(false);
-    }
+            console.log(likesArray)
+            console.log("already liked, removing");
+            console.log(newLikesArray)
+            db.collection('posts')
+                .doc(id)
+                .update({
+                    likes: newLikesArray
+                });
+            setLikesArray(newLikesArray);
+            setAlreadyLiked(false);
+        }
+    };
 
     const deletePost = () => {
         //delete img from firebase storage
@@ -127,7 +131,7 @@ export default function Post({ profileUrl, username,
             </div>
 
             <div className="post_likes">
-                {alreadyLiked ? <FavoriteIcon className="post_likeIcon" style={{ color: "#E76464" }} onClick={removeLike} /> : <FavoriteIcon className="post_likeIcon" onClick={addLike} />}
+                {alreadyLiked ? <FavoriteIcon className="post_likeIcon" style={user ? { color: "#E76464" } : { color: "#E76464", cursor: "default" }} onClick={removeLike} /> : <FavoriteIcon style={user ? {} : { cursor: "default" }} className="post_likeIcon" onClick={addLike} />}
 
                 {likes && likes.length !== 0 ?
                     <Popper id={id2} open={open} anchorEl={anchorEl}>

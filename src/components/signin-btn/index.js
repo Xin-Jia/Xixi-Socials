@@ -18,7 +18,7 @@ export default function SignInBtn() {
 
     return (
         <div className="signInBtn" onClick={signInBtnClick}>
-            <p>Sign In With Google</p>
+            <span>Sign In With Google</span>
         </div>
     )
 }
