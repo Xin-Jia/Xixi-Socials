@@ -2,6 +2,11 @@ import React, { useContext, useState } from 'react';
 import { db } from '../../firebase';
 import './style.css';
 import SendIcon from '@material-ui/icons/Send';
+import { Button } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import InputAdornment from '@material-ui/core/InputAdornment';
+
 
 
 export default function CommentInput({ user, comments, id }) {
@@ -10,7 +15,9 @@ export default function CommentInput({ user, comments, id }) {
     //const [user, setUser] = useContext(UserContext).user;
     const [commentArray, setCommentArray] = useState(comments ? comments : [])
 
-    const addComment = () => {
+
+    const addComment = (e) => {
+        e.preventDefault();
         if (comment != "") {
             //add comment to post info
             commentArray.push({
@@ -29,17 +36,26 @@ export default function CommentInput({ user, comments, id }) {
     };
 
 
-    return (
-        <div className="commentInput">
-            <textarea
-                className="commentInput_textarea"
-                rows="1"
-                placeholder="Enter a comment..."
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}>
 
-            </textarea>
-            <SendIcon onClick={addComment} className="commentInput_button" />
-        </div>
+    return (
+        <form>
+            <div className="commentInput">
+                <TextField
+                    onChange={(e) => setComment(e.target.value)}
+                    value={comment}
+                    id="write-comment"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <img style={{ width: "20px", height: "20px", borderRadius: "20px" }} src={user.photoURL} />
+                            </InputAdornment>
+                        ),
+                    }}
+                />
+                <Button type="submit" id="submit-btn"
+                    variant="contained"
+                    onClick={addComment}>Default</Button>
+            </div>
+        </form>
     )
 }

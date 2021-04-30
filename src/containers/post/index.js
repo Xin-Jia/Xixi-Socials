@@ -5,7 +5,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { db, storage } from '../../firebase';
 import './style.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import { makeStyles } from '@material-ui/core/styles';
 import Popper from '@material-ui/core/Popper';
 
 export default function Post({ profileUrl, username,
@@ -22,7 +21,7 @@ export default function Post({ profileUrl, username,
                 }
             });
         }
-    });
+    }, []);
 
     const addLike = () => {
 

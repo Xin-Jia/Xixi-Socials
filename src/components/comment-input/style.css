@@ -1,7 +1,7 @@
 .commentInput{
     display:flex;
     justify-content:space-between;
-    border-top:1px solid lightgrey;
+    /* border-top:1px solid lightgrey; */
     margin-top:5px;
 }
 .commentInput_textarea{
@@ -24,4 +24,22 @@
 .commentInput_button{
     cursor:pointer;
     margin-top:7px;
+}
+#submit-btn{
+  display:none;
+}
+#write-comment{
+max-width:570px;
+  width:120vw;
+  font-size:15px;
+  
+}
+.MuiInput-underline:before{
+  border-bottom:0.5px solid lightgrey !important;
+}
+.MuiInput-underline:hover:not(.Mui-disabled):before{
+  border-bottom:1.5px solid #4B4A4A !important;
+}
+.MuiInput-underline:after{
+  border-bottom:2px solid #B98682 !important;
 }
