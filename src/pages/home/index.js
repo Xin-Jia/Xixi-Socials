@@ -6,6 +6,7 @@ import { auth } from "../../firebase";
 
 
 export default function Home() {
+
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -29,7 +30,7 @@ export default function Home() {
 
     return (
         <div className="home">
-            <Navbar user={user} />
+
             <CreatePost user={user} />
             <Feed user={user} />
         </div>

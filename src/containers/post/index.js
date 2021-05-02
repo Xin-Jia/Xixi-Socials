@@ -7,8 +7,9 @@ import './style.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Popper from '@material-ui/core/Popper';
 
+
 export default function Post({ profileUrl, username,
-    id, photoUrl, caption, comments, timestamp, likes, user }) {
+    id, photoUrl, caption, comments, timestamp, likes, user, props }) {
 
     const [likesArray, setLikesArray] = useState(likes ? likes : []);
     const [alreadyLiked, setAlreadyLiked] = useState(false);
@@ -101,6 +102,7 @@ export default function Post({ profileUrl, username,
 
     const open = Boolean(anchorEl);
     const id2 = open ? 'simple-popper' : undefined;
+
 
     return (
 

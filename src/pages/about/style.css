@@ -1,0 +1,37 @@
+.about{
+    background-color:#ECE2D7;
+    height: 100%;
+    padding:2em;
+    min-height: 100%; 
+}
+.about_text{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    max-width: 550px;
+    width: 80vw;
+    padding: 16px;
+    background-color:white;
+    margin: 0 auto;
+    margin-top:2em;
+    height:90vw;
+    max-height:430px;
+}
+.about_profile{
+    border-radius:70px;
+    padding:1em;
+}
+
+.about_sections h3{
+    margin-bottom:1em;
+    border-bottom:2px solid lightgrey;
+}
+.about_email{
+    display: flex;
+    align-items:center;
+    
+}
+a{
+    text-decoration:none;
+    color:black;
+}

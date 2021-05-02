@@ -1,10 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { db } from '../../firebase';
 import './style.css';
-import SendIcon from '@material-ui/icons/Send';
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 

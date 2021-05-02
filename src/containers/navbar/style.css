@@ -12,9 +12,28 @@
 .navbar_profile{
     display: flex;
     align-items:center;
+    cursor:default;
 }
 .navbar_logout{
     margin-left:10px;
     margin-top:5px;
+    cursor:pointer;
+}
+.navbar_left{
+     display: flex;
+}
+.navbar_left a{
+    text-decoration:none;
+    list-style-type: none;
+    margin-right:1em;
+    color:black;
+}
+.navbar_left a:hover{
+    font-weight:bold;
+}
+.navbar_left p:hover{
+    font-weight:bold;
+}
+.navbar_left p{
     cursor:pointer;
 }

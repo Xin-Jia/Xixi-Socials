@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { SignInBtn } from '../../components';
-import { UserContext } from '../../contexts/user';
+import { Link } from 'react-router-dom';
 import './style.css';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { auth } from "../../firebase";
@@ -22,7 +22,12 @@ export default function Navbar({ user }) {
 
     return (
         <div className="navbar">
-            <p>Xixi Socials  🌸 </p>
+            <div className="navbar_left">
+                <Link to='/'><p>Xixi Socials  🌸 </p></Link>
+                <Link to='/about'>
+                    <li>About</li>
+                </Link>
+            </div>
             {user ?
                 <div className="navbar_profile">
                     <img className="navbar_img" src={user.photoURL} />
