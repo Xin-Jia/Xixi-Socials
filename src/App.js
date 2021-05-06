@@ -35,8 +35,12 @@ function App() {
         <div className="app">
           <Navbar user={user} />
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
+            <Route path="/" exact>
+              <Home user={user} />
+            </Route>
+            <Route path="/about" exact>
+              <About />
+            </Route>
           </Switch>
         </div>
       </UserContextProvider>

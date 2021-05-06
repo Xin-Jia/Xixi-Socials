@@ -9,7 +9,7 @@ import Popper from '@material-ui/core/Popper';
 
 
 export default function Post({ profileUrl, username,
-    id, photoUrl, caption, comments, timestamp, likes, user, props }) {
+    id, photoUrl, caption, comments, timestamp, likes, user }) {
 
     const [likesArray, setLikesArray] = useState(likes ? likes : []);
     const [alreadyLiked, setAlreadyLiked] = useState(false);
@@ -22,7 +22,7 @@ export default function Post({ profileUrl, username,
                 }
             });
         }
-    }, []);
+    }, [user]);
 
     const addLike = () => {
 
